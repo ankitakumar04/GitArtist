@@ -2,7 +2,7 @@
   "name": "node-ejs",
   "main": "server.js",
   "scripts": {
-    "start" : "node server.js"
+    "start": "forever server.js"
   },
   "dependencies": {
     "ejs": "^1.0.0",
@@ -10,5 +10,8 @@
     "express-ejs-layouts": "^1.1.0",
     "axios": "~0.16.2",
     "circular-json": "~0.3.3"
+  },
+  "devDependencies": {
+    "forever": "^0.15.3"
   }
 }
