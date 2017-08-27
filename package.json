@@ -2,7 +2,7 @@
   "name": "node-ejs",
   "main": "server.js",
   "scripts": {
-    "start": "npm install && forever server.js"
+    "start": "node server.js",
   },
   "dependencies": {
     "ejs": "^1.0.0",
