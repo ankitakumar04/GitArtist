@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>GitArtist</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+    <link href="http://vijaysutrave.com/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="container">
-
-       <div class="panel panel-primary">
+      <div class="panel panel-primary">
         <div class="panel-body">
         <img src = "<%= response[0].owner.avatar_url %>">
         <div>
           <div>
             <%= metadata.artist %>
-          </div>
+            </div>
           <div>
             <%= metadata.stargazers_count %>
           </div>
@@ -28,9 +29,22 @@
         <li><%= repo.name %> - <%= repo.stargazers_count %> - <%= repo.language %></li>
         <% }); %>
         </ul>
-        <div class="panel-body" id="postResult"></div>
+      <div class="panel-body" id="postResult"></div>
+        <div class="row">
+           <div class="skills-stat">
+                        <div class="skill-item">
+                        <% metadata.languages.forEach(function(language,idx) { %>
+                            <div id="<%= idx %>" data-startdegree="0" data-dimension="150" data-text="<%= language.title %>" data-width="16" data-fontsize="22" data-percent="<%= language.value %>" data-fgcolor="#F9DB3D" data-bgcolor="#eee"></div>
+                        <% }); %>
+                         </div>
+                    </div>
+        </div>
         </div>
       </div>
-
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://vijaysutrave.com/js/jquery.circliful.min.js"></script>
+<script type="text/javascript">
+  $(".skill-item>div").circliful()
+</script>
   </body>
 </html>

@@ -13,10 +13,17 @@ app.get('/', function(req, res) {
 	res.render('pages/index');
 });
 
-function calculate(response) {
-var metadata = response.reduce(function(acc,value){
-    acc["stargazers_count"] += value.stargazers_count;
-    return acc;
+function calculateStars(response) {
+  var checkLang = {};
+  var metadata = response.reduce(function(acc,currentItem){
+    acc["stargazers_count"] += currentItem.stargazers_count;
+ if(checkLang[currentItem.language]){
+  checkLang[currentItem.language] = checkLang[currentItem.language] + 1;
+}
+else {
+  checkLang[currentItem.language] = 1;
+}
+   return acc;
   },{stargazers_count:0});
 
 if (metadata.stargazers_count<10){
@@ -31,20 +38,28 @@ else if(metadata.stargazers_count>100 && metadata.stargazers_count<1000){
 else{
   metadata['artist']="Hats off! You are the PRO";
 }
+metadata['languages']=Object.keys(checkLang).map((item) => {
+  return { value: (checkLang[item]/response.length)*100, title: item
+}
+});
+metadata['mainlanguage'] = Object.keys(checkLang).reduce(function(a, b){
+ return checkLang[a] > checkLang[b] ? a : b
+});
 return metadata;
 }
 
 app.get('/:id', function(req, res) {
     axios.get('https://api.github.com/users/' +req.params.id + '/repos')
   .then(function (response) {
-    var getMetadata = calculate(response.data);
+    var getMetadata = calculateStars(response.data);
+    console.log(getMetadata);
     res.render('pages/result',{
         response:response.data,
         metadata:getMetadata
     })
   })
   .catch(function (error) {
-    // console.log(error);
+    console.log(error);
   });
 })
 
