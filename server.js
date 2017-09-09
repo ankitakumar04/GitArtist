@@ -36,7 +36,7 @@ function parseData(response, user) {
     });
 
     if(metadata.mainlanguage == "null") {
-      meta.mainlanguage = 'Unpredicatable'
+      metadata.mainlanguage = 'Unpredicatable'
     }
 
     if (metadata.stargazers_count > 1000) {
