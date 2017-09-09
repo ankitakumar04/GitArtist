@@ -1,47 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GitArtist</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="container">
-	    <div class="panel panel-primary">
-        <div class="panel-body" align="center">
-          <form class="form-inline" id="todoInputForm">
-            <div class="form-group">
-              <input type="text" class="form-control" id="login" placeholder="Enter your Github username">
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-          </form><br/>
-          <div class="panel-body" id="postResult"></div>
-        </div>
+<% include ../partials/head %>
+  <div class="container">
+  <div class="">
+    <div class="wrapper">
+      <div class="hero">
+        <img src="got.svg" alt="Game of thrones logo">
       </div>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript">
-      	$(document).ready(function(){
-      		$('#todoInputForm').submit(function(e){
-      			e.preventDefault()
-      			var input = $('#login').val()
-      			window.location.href = '/' + input
-      		})
-      	})
+      <form class="form-inline" id="todoInputForm">
+        <div class="form-group">
+          <input type="text" class="input-username" id="login" placeholder="Enter your Github username" autofocus autocomplete="off">
+        </div>
+      </form>
+      <br/>
+      <div class="panel-body" id="postResult"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    	$('#todoInputForm').submit(function(e){
+    		e.preventDefault()
+    		var input = $('#login').val()
+    		window.location.href = '/' + input
+    	})
+    })
 
-      </script>
-      <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-105320487-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-  </body>
-</html>
+  </script>
+  <% include ../partials/footer %>

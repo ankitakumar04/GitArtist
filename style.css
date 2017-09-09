@@ -1,4 +1,7 @@
-/*.panel panel-primary{
-    align-self: center;
-    color: red;
-}*/
+.container {
+    margin: 100px;
+}
+.form-inline {
+    margin: 100px;
+    top: 10px;
+}

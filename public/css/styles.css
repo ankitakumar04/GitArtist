@@ -1,0 +1,93 @@
+body {
+  background-color: #ecf0f1;
+  padding: 20px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.photos {
+  text-align: center;
+}
+
+.meta {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.meta-value {
+  font-size: 24px;
+}
+
+.meta-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.desc {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 10px 100px;
+}
+
+.meta-text {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.meta-info {
+  width: 25%;
+}
+
+.sharer {
+  text-align: center;
+}
+
+.sharer-image {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.artist-name {
+  padding: 20px 0;
+}
+
+.user-photo,
+.artist-photo {
+  margin: 20px;
+  box-shadow: 2px 3px 3px #a0a0a0;
+}
+
+.wrapper {
+  text-align: center;
+  position: relative;
+  padding: 100px 0;
+}
+
+.wrapper .form-group {
+  margin-top: 80px;
+}
+
+.wrapper .input-username {
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  width: 400px;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.wrapper .input-username:focus {
+  outline: none;
+  border-bottom: 3px solid black;
+}

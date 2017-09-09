@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>GitArtist</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
-    <link href="http://vijaysutrave.com/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-        <img src = "<%= response[0].owner.avatar_url %>">
-        <div>
-          <div>
-            <%= metadata.artist %>
-            </div>
-          <div>
-            <%= metadata.stargazers_count %>
-          </div>
-
+<% include ../partials/head %>
+  <div class="header">
+    <a href="/"><img src="got.svg" alt="" height="30"></a>
+  </div>
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="sharer">
+        <img src="fb.svg" alt="" class="sharer-image" height="30" width="30" data-id="fb">
+        <img src="twitter.svg" alt="" class="sharer-image" height="30" width="30" data-id="twitter">
+      </div>
+      <div class="photos">
+        <div class="user-photo inline-block">
+          <img src = "<%= response[0].owner.avatar_url %>" height="200">
+          <div class="artist-name"><%= user.name %></div>
         </div>
-        <ul>
-        <% response.forEach(function(repo) { %>
-        <li><%= repo.name %> - <%= repo.stargazers_count %> - <%= repo.language %></li>
-        <% }); %>
-        </ul>
-      <div class="panel-body" id="postResult"></div>
-        <div class="row">
-           <div class="skills-stat">
-                        <div class="skill-item">
-                        <% metadata.languages.forEach(function(language,idx) { %>
-                            <div id="<%= idx %>" data-startdegree="0" data-dimension="150" data-text="<%= language.title %>" data-width="16" data-fontsize="22" data-percent="<%= language.value %>" data-fgcolor="#F9DB3D" data-bgcolor="#eee"></div>
-                        <% }); %>
-                         </div>
-                    </div>
-        </div>
+        <div class="inline-block meta-text">is</div>
+        <div class="artist-photo inline-block">
+          <img src = "<%=  metadata.artist.id  %>.jpg " height="200">
+          <div class="artist-name"><%= metadata.artist.character %></div>
         </div>
       </div>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://vijaysutrave.com/js/jquery.circliful.min.js"></script>
-<script type="text/javascript">
-  $(".skill-item>div").circliful()
-</script>
-  </body>
-</html>
+      <div class="desc"><%= metadata.artist.desc %></div>
+      <div class="meta">
+        <div class="meta-info inline-block">
+          <div class="meta-item">
+            <div class="meta-title">TOTAL STARS</div>
+            <div class="meta-value numscroller" data-max='<%= metadata.stargazers_count %>' data-min='0' data-delay='1' data-increment='<%= metadata.stargazers_count / 10 > 0 ? metadata.stargazers_count / 10 : 1 %>'><%= metadata.stargazers_count %></div>
+          </div>
+        </div>
+        <div class="meta-info inline-block">
+          <div class="meta-item">
+            <div class="meta-title">TOTAL FOLLOWERS</div>
+            <div class="meta-value numscroller" data-max='<%= user.followers %>' data-min='0' data-delay='1' data-increment='<%= user.followers / 10 > 0 ? user.followers / 10 : 1  %>'><%= user.followers %></div>
+          </div>
+        </div>
+        <div class="meta-info inline-block">
+          <div class="meta-item">
+            <div class="meta-title">TOTAL REPOS (PUBLIC)</div>
+            <div class="meta-value numscroller" data-max='<%= user.public_repos %>' data-min='0' data-delay='1' data-increment='<%= user.public_repos / 10 > 0 ? user.public_repos / 10 : 1  %>'><%= user.public_repos %></div>
+          </div>
+        </div>
+        <div class="meta-info inline-block">
+          <div class="meta-item">
+            <div class="meta-title">FAVORITE LANGUAGE</div>
+            <div class="meta-value"><%= metadata.mainlanguage %></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body" id="postResult"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $('.sharer-image').click(function(e) {
+      e.preventDefault()
+      var e = $(e.target).data('id');
+      var url = window.location.href;
+      if(e === 'fb') {
+        window.open('https://www.facebook.com/sharer/sharer.php?u='+url)
+      } else {
+        window.open('https://twitter.com/intent/tweet?url='+url)
+      }
+    })
+  </script>
+  <script src="js/counter.js"></script>
+  <% include ../partials/footer %>
