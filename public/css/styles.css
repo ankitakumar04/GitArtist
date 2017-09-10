@@ -72,7 +72,7 @@ body {
 .wrapper {
   text-align: center;
   position: relative;
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .wrapper .form-group {
@@ -93,6 +93,11 @@ body {
   border-bottom: 3px solid black;
 }
 
+.github-button {
+  position: relative;
+  left: 50px;
+  margin: 20px 0;
+}
 
 @media screen and (max-width: 760px) {
   .hero img {

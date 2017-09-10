@@ -1,20 +1,24 @@
-// load the things we need
-var express = require('express');
-var app = express();
-var axios = require('axios');
-var path = require('path');
-// set the view engine to ejs
+/* load the things we need */
+const express = require('express');
+const app = express();
+const axios = require('axios');
+const path = require('path');
+
+/* View engine */
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res) {
+/*  Set the index route */
+app.get('/', (req, res) => {
     res.render('pages/index');
 });
 
+/* static path */
 app.use(express.static(path.join(__dirname, 'public')));
 
-function parseData(response, user) {
-    var checkLang = {};
-    const metadata = response.reduce(function(acc, currentItem) {
+/* parses the Github response */
+const parseData = (response, user) => {
+    const checkLang = {};
+    const metadata = response.reduce((acc, currentItem) => {
         acc.stargazers_count += currentItem.stargazers_count;
         if (checkLang[currentItem.language]) {
             checkLang[currentItem.language] = checkLang[currentItem.language] + 1;
@@ -25,13 +29,13 @@ function parseData(response, user) {
     }, {
         stargazers_count: 0
     });
-    metadata['languages'] = Object.keys(checkLang).map((item) => {
+    metadata.languages = Object.keys(checkLang).map((item) => {
         return {
             value: (checkLang[item] / response.length) * 100,
             title: item
         }
     });
-    metadata['mainlanguage'] = Object.keys(checkLang).reduce(function(a, b) {
+    metadata.mainlanguage = Object.keys(checkLang).reduce((a, b) => {
         return checkLang[a] > checkLang[b] ? a : b
     });
 
@@ -74,18 +78,19 @@ function parseData(response, user) {
     return metadata;
 }
 
-app.get('/:id', function(req, res) {
+/* Set the results path */
+app.get('/:id', (req, res) => {
     axios.get('https://api.github.com/users/' + req.params.id).then((user) => {
         axios.get('https://api.github.com/users/' + req.params.id + '/repos')
             .then((response) => {
-                var getMetadata = parseData(response.data, user.data);
+                const getMetadata = parseData(response.data, user.data);
                 res.render('pages/result', {
                     response: response.data,
                     user: user.data,
                     metadata: getMetadata
                 })
             })
-            .catch(function(error) {
+            .catch((error) => {
                 res.render('pages/404');
             });
     }).catch((e) => {

@@ -24,19 +24,19 @@
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">TOTAL STARS</div>
-            <div class="meta-value numscroller" data-max='<%= metadata.stargazers_count %>' data-min='0' data-delay='1' data-increment='<%= parseInt(metadata.stargazers_count / 10) > 0 ? metadata.stargazers_count / 10 : 1 %>'><%= metadata.stargazers_count %></div>
+            <div class="meta-value numscroller" data-max='<%= metadata.stargazers_count %>' data-min='0' data-delay='1' data-increment='<%= parseInt(metadata.stargazers_count / 10) > 0 ? metadata.stargazers_count / 10 : 1 %>'>0</div>
           </div>
         </div>
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">TOTAL FOLLOWERS</div>
-            <div class="meta-value numscroller" data-max='<%= user.followers %>' data-min='0' data-delay='1' data-increment='<%= parseInt(user.followers / 10 > 0) ? user.followers / 10 : 1  %>'><%= user.followers %></div>
+            <div class="meta-value numscroller" data-max='<%= user.followers %>' data-min='0' data-delay='1' data-increment='<%= parseInt(user.followers / 10 > 0) ? user.followers / 10 : 1  %>'>0</div>
           </div>
         </div>
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">TOTAL REPOS (PUBLIC)</div>
-            <div class="meta-value numscroller" data-max='<%= user.public_repos %>' data-min='0' data-delay='1' data-increment='<%= parseInt(user.public_repos / 10) > 0 ? user.public_repos / 10 : 1  %>'><%= user.public_repos %></div>
+            <div class="meta-value numscroller" data-max='<%= user.public_repos %>' data-min='0' data-delay='1' data-increment='<%= parseInt(user.public_repos / 10) > 0 ? user.public_repos / 10 : 1  %>'>0</div>
           </div>
         </div>
         <div class="meta-info inline-block">
