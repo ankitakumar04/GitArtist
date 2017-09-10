@@ -12,6 +12,9 @@ app.get('/', (req, res) => {
     res.render('pages/index');
 });
 
+app.get('/favicon.ico', function(req,res){
+  res.sendFile(__dirname + "/public/favicon.png");
+});
 /* static path */
 app.use(express.static(path.join(__dirname, 'public')));
 
