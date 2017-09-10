@@ -90,10 +90,12 @@ app.get('/:id', (req, res) => {
                     metadata: getMetadata
                 })
             })
-            .catch((error) => {
+            .catch((e) => {
+                console.log(e);
                 res.render('pages/404');
             });
     }).catch((e) => {
+        console.log(e);
         res.render('pages/404');
     })
 })
