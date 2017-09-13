@@ -1,5 +1,6 @@
 body {
-  background-color: #ecf0f1;
+  background-image: url(public/GOTbackground.jpg);
+  background-repeat: no-repeat;
   padding: 20px;
 }
 
