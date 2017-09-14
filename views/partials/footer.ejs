@@ -11,6 +11,22 @@
   <div class="github-button">
     <iframe src="https://ghbtns.com/github-btn.html?user=ankitakumar04&repo=gitartist&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
   </div>
+  <div class="sharer">
+    <img src="fb.svg" alt="" class="sharer-image" height="20" width="20" data-id="fb"> &nbsp;
+    <img src="twitter.svg" alt="" class="sharer-image" height="20" width="20" data-id="twitter">
+  </div>
+  <script>
+    $('.sharer-image').click(function(e) {
+      e.preventDefault()
+      var e = $(e.target).data('id');
+      var url = window.location.href;
+      if(e === 'fb') {
+        window.open('https://www.facebook.com/sharer/sharer.php?u='+url)
+      } else {
+        window.open('https://twitter.com/intent/tweet?url='+url)
+      }
+    })
+  </script>
   &lt;&gt; with ♥️ by <a href="https://github.com/ankitakumar04">Ankita Kumar</a>
 </div>
 </body>
