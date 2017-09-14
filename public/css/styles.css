@@ -1,6 +1,5 @@
 body {
   background-color: #D3D3D3;
-  background-image: url("http://i.imgur.com/bvFwFPo.jpg");
   padding: 20px;
   overflow: scroll;
 }
@@ -15,9 +14,6 @@ body {
 }
 
 .photos {
-  left: 50%;
-  padding-left: 10em;
-  padding-top: 1em;
   text-align: center;
 }
 
