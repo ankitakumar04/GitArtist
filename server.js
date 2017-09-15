@@ -46,7 +46,13 @@ const parseData = (response, user) => {
       metadata.mainlanguage = 'Unpredicatable'
     }
 
-    if (metadata.stargazers_count > 1000) {
+    if (metadata.stargazers_count > 5000) {
+      metadata['artist'] = {
+        id: 'dragons',
+        character: 'Drogon',
+        desc: 'You are the most powerful dragon Westeros has ever seen. They all bow down to you and nothing can ever break your fervour.'
+      }
+    } else if (metadata.stargazers_count > 1000) {
         metadata['artist'] = {
             id: 'jon',
             character: 'Jon Snow',
