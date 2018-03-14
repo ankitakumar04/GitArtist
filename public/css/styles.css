@@ -1,5 +1,7 @@
 body {
-  background-color: #D3D3D3;
+  background: -webkit-linear-gradient(to right,#F1C40F,#F39C12);
+  background:    -moz-linear-gradient(to right,#F1C40F,#F39C12);
+  background:         linear-gradient(to right,#F1C40F,#F39C12);
   padding: 20px;
   overflow: scroll;
 }
