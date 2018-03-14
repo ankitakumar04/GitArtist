@@ -68,7 +68,7 @@ const parseData = (response, user) => {
         metadata['artist'] = {
             id: 'arya',
             character: 'Arya Stark',
-            desc: 'With your experience in varied languages, you can master anything taught to you. You can be the "Faceless man", don differnt hats! '
+            desc: 'With your experience in varied languages, you can master anything taught to you. You can be the "Faceless man", don different hats! '
         }
     } else if (metadata.languages.length <= 3 && metadata.stargazers_count > 50) {
         metadata['artist'] = {
