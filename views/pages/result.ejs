@@ -1,20 +1,10 @@
 <% include ../partials/head %>
   <div class="header">
-<<<<<<< HEAD
+
     <a href="/"><img src="got.svg" alt="" height="30"></a>
   </div>
   <div class="container">
     <div class="content-wrapper">
-      <div class="sharer">
-        <img src="fb.svg" alt="" class="sharer-image" height="30" width="30" data-id="fb">
-        <img src="twitter.svg" alt="" class="sharer-image" height="30" width="30" data-id="twitter">
-      </div>
-=======
-    <a href="/"><img src="got.svg" alt="" height="30" ></a>
-  </div>
-  <div class="container">
-    <div class="content-wrapper">
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
       <div class="photos">
         <div class="user-photo inline-block">
           <img src = "<%= response[0].owner.avatar_url %>" height="200">
@@ -31,41 +21,29 @@
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">TOTAL STARS</div>
-<<<<<<< HEAD
+
             <div class="meta-value numscroller" data-max='<%= metadata.stargazers_count %>' data-min='0' data-delay='1' data-increment='<%= metadata.stargazers_count / 10 > 0 ? metadata.stargazers_count / 10 : 1 %>'><%= metadata.stargazers_count %></div>
-=======
-            <div class="meta-value numscroller" data-max='<%= metadata.stargazers_count %>' data-min='0' data-delay='1' data-increment='<%= parseInt(metadata.stargazers_count / 10) > 0 ? metadata.stargazers_count / 10 : 1 %>'>0</div>
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
           </div>
         </div>
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">TOTAL FOLLOWERS</div>
-<<<<<<< HEAD
+
             <div class="meta-value numscroller" data-max='<%= user.followers %>' data-min='0' data-delay='1' data-increment='<%= user.followers / 10 > 0 ? user.followers / 10 : 1  %>'><%= user.followers %></div>
-=======
-            <div class="meta-value numscroller" data-max='<%= user.followers %>' data-min='0' data-delay='1' data-increment='<%= parseInt(user.followers / 10 > 0) ? user.followers / 10 : 1  %>'>0</div>
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
           </div>
         </div>
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">TOTAL REPOS (PUBLIC)</div>
-<<<<<<< HEAD
+
             <div class="meta-value numscroller" data-max='<%= user.public_repos %>' data-min='0' data-delay='1' data-increment='<%= user.public_repos / 10 > 0 ? user.public_repos / 10 : 1  %>'><%= user.public_repos %></div>
-=======
-            <div class="meta-value numscroller" data-max='<%= user.public_repos %>' data-min='0' data-delay='1' data-increment='<%= parseInt(user.public_repos / 10) > 0 ? user.public_repos / 10 : 1  %>'>0</div>
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
           </div>
         </div>
         <div class="meta-info inline-block">
           <div class="meta-item">
             <div class="meta-title">FAVORITE LANGUAGE</div>
-<<<<<<< HEAD
+
             <div class="meta-value"><%= metadata.mainlanguage %></div>
-=======
-            <div class="meta-value"><%= metadata.mainlanguage || '-' %></div>
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
           </div>
         </div>
       </div>
@@ -74,7 +52,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-<<<<<<< HEAD
+
     $('.sharer-image').click(function(e) {
       e.preventDefault()
       var e = $(e.target).data('id');
@@ -86,9 +64,5 @@
       }
     })
   </script>
-  <script src="js/counter.js"></script>
-=======
-  !function($){function numberRoller(t){var i=$(".roller-title-number-"+t).attr("data-min"),o=$(".roller-title-number-"+t).attr("data-max"),e=$(".roller-title-number-"+t).attr("data-delay"),n=$(".roller-title-number-"+t).attr("data-increment"),l=o-i,s=1e3*e/l;numberRoll(t,i,o,n,s)}function numberRoll(slno,min,max,increment,timeout){max>=min?($(".roller-title-number-"+slno).html(min),min=parseInt(min)+parseInt(increment),setTimeout(function(){numberRoll(eval(slno),eval(min),eval(max),eval(increment),eval(timeout))},timeout)):$(".roller-title-number-"+slno).html(max)}$(window).on("load",function(){$(document).scrollzipInit(),$(document).rollerInit(),$(".numscroller").scrollzip({showFunction:function(){numberRoller($(this).attr("data-slno"))},wholeVisible:!1})}),$.fn.scrollzipInit=function(){$("body").prepend("<div style='position:fixed;top:0px;left:0px;width:0;height:0;' id='scrollzipPoint'></div>")},$.fn.rollerInit=function(){var t=0;$(".numscroller").each(function(){t++,$(this).attr("data-slno",t),$(this).addClass("roller-title-number-"+t)})},$.fn.scrollzip=function(t){var i=$.extend({showFunction:null,hideFunction:null,showShift:0,wholeVisible:!1,hideShift:0},t);return this.each(function(t,o){return $(this).addClass("scrollzip"),$.isFunction(i.showFunction)&&!$(this).hasClass("isShown")&&$(window).outerHeight()+$("#scrollzipPoint").offset().top-i.showShift>$(this).offset().top+(i.wholeVisible?$(this).outerHeight():0)&&$("#scrollzipPoint").offset().top+(i.wholeVisible?$(this).outerHeight():0)<$(this).outerHeight()+$(this).offset().top-i.showShift&&($(this).addClass("isShown"),i.showFunction.call(this)),$.isFunction(i.hideFunction)&&$(this).hasClass("isShown")&&($(window).outerHeight()+$("#scrollzipPoint").offset().top-i.hideShift<$(this).offset().top+(i.wholeVisible?$(this).outerHeight():0)||$("#scrollzipPoint").offset().top+(i.wholeVisible?$(this).outerHeight():0)>$(this).outerHeight()+$(this).offset().top-i.hideShift)&&($(this).removeClass("isShown"),i.hideFunction.call(this)),this})}}(jQuery);
-  </script>
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
+
   <% include ../partials/footer %>

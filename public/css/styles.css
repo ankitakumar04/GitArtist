@@ -1,20 +1,12 @@
 body {
-<<<<<<< HEAD
-  background-color: #ecf0f1;
-  padding: 20px;
-=======
   background-color: #D3D3D3;
   padding: 20px;
   overflow: scroll;
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
 }
 
 .footer {
   text-align: center;
-<<<<<<< HEAD
-=======
   margin: 20px 0;
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
 }
 
 .inline-block {
@@ -51,10 +43,7 @@ body {
 }
 
 .meta-text {
-<<<<<<< HEAD
-=======
   color: #364E4E;
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
   font-size: 32px;
   font-weight: bold;
 }
@@ -64,21 +53,15 @@ body {
 }
 
 .sharer {
-<<<<<<< HEAD
   text-align: center;
 }
 
 .sharer-image {
   margin: 0 10px;
-=======
-  margin: 0 10px;
-  display: block;
-  padding-left: 1.5em;
-  padding-bottom: 1.5em;
+  display: inline-block;
 }
 
 .sharer-image {
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
   cursor: pointer;
 }
 
@@ -89,21 +72,13 @@ body {
 .user-photo,
 .artist-photo {
   margin: 20px;
-<<<<<<< HEAD
-  box-shadow: 2px 3px 3px #a0a0a0;
-=======
   box-shadow: 5px 5px 25px #967e48;
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
 }
 
 .wrapper {
   text-align: center;
   position: relative;
-<<<<<<< HEAD
   padding: 100px 0;
-=======
-  padding: 80px 0;
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
 }
 
 .wrapper .form-group {
@@ -123,8 +98,6 @@ body {
   outline: none;
   border-bottom: 3px solid black;
 }
-<<<<<<< HEAD
-=======
 
 .github-button {
   position: relative;
@@ -165,4 +138,3 @@ body {
     display: block;
   }
 }
->>>>>>> 36463be55946f45e7bcb53d801c8a52b46f44381
